@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1282778202220722687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1282778202220722685}
+  - component: {fileID: 1282778202220722686}
+  - component: {fileID: 1282778202220722684}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1282778202220722685
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282778202220722687}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1282778202220722686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282778202220722687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ef4ce71f949842ae86598738455f524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadSceneManager: {fileID: 1282778202220722684}
+  gameData:
+    lastSaveSlotId: 3
+    saveSlots:
+    - sceneName: GameScene02
+      dateTime: 12/15/2022 2:01:15 PM
+      saveSlotName: 
+      playerInformation:
+        playerPos: {x: 0, y: 0, z: 0}
+        playerLevel: 0
+        inventory:
+          items: []
+    - sceneName: GameScene01
+      dateTime: 12/15/2022 3:26:44 PM
+      saveSlotName: 
+      playerInformation:
+        playerPos: {x: 0, y: 0, z: 0}
+        playerLevel: 0
+        inventory:
+          items: []
+    - sceneName: GameScene01
+      dateTime: 12/15/2022 4:26:10 PM
+      saveSlotName: 
+      playerInformation:
+        playerPos: {x: -0.03595677, y: -0.010000229, z: 1.6344898}
+        playerLevel: 0
+        inventory:
+          items: []
+    - sceneName: GameScene01
+      dateTime: 12/15/2022 4:27:10 PM
+      saveSlotName: 
+      playerInformation:
+        playerPos: {x: 4.558875, y: 6.005652, z: 9.562057}
+        playerLevel: 0
+        inventory:
+          items: []
+  currentSaveSlot:
+    sceneName: GameScene01
+    dateTime: 12/15/2022 4:27:10 PM
+    saveSlotName: 
+    playerInformation:
+      playerPos: {x: 4.558875, y: 6.005652, z: 9.562057}
+      playerLevel: 0
+      inventory:
+        items: []
+  saveslotId: 3
+  filename: GameData
+--- !u!114 &1282778202220722684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282778202220722687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f977c35e131334e6aafa64815d2ba55c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
