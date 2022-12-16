@@ -81,17 +81,19 @@ public class InGameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Controls the ingame Ui
-    /// 0 ->ingame menu
-    /// 1 -> paus menu
+    /// Controls the ingame Ui |
+    /// 0 -> ingame menu |
+    /// 1 -> pause menu |
+    /// 2 -> option menu |
     /// </summary>
     /// <param name="sceneIndex"> reference to the ui menu </param>
     public void OpenUiScene(int sceneIndex)
     {
+        TurnAllUiContainersOff();
         switch (sceneIndex)
         {
             case 0: // Ingame Menu
-                inGameUiElements.pauseMenuContainer.SetActive(false);
+                //inGameUiElements.ingameContainer.SetActive(true);
                 SetCursorState(true);
                 playerInformationManager.PlayerMovement(true); // player can move again
                 break;
@@ -101,8 +103,23 @@ public class InGameManager : MonoBehaviour
                 SetCursorState(false);
                 break;
 
+            case 2: // Option Menu
+                inGameUiElements.optionContainer.SetActive(true);
+                SetCursorState(false);
+                break;
+
             default:
                 break;
         }
+    }
+
+    /// <summary>
+    /// Turns all Ui elements inside the ingameUiElements Script off
+    /// </summary>
+    private void TurnAllUiContainersOff()
+    {
+        inGameUiElements.pauseMenuContainer.SetActive(false);
+        //inGameUiElements.optionContainer.SetActive(false);
+        //inGameUiElements.ingameContainer.SetActive(false);
     }
 }

@@ -123,27 +123,35 @@ public class MainMenuManager : MonoBehaviour
 
 
     /// <summary>
-    /// Controls the mainMenu Ui
-    /// 0 -> Main menu
-    /// 1 -> Load menu
+    /// Controls the mainMenu Ui|
+    /// 0 -> Main menu |
+    /// 1 -> Load menu |
     /// </summary>
     /// <param name="sceneIndex"> reference to the ui menu </param>
     public void ChangeUiScene(int sceneIndex)
     {
+        TurnAllUiContainersOff();
         switch (sceneIndex)
         {
             case 0: // Main Menu
-                mainMenuUiElements.obj_loadContainer.SetActive(false);
                 mainMenuUiElements.obj_mainMenuContainer.SetActive(true);
                 break;
 
             case 1: // Load Menu
                 mainMenuUiElements.obj_loadContainer.SetActive(true);
-                mainMenuUiElements.obj_mainMenuContainer.SetActive(false);
                 break;
 
             default:
                 break;
         }
+    }
+
+    /// <summary>
+    /// Turns all Ui elements inside the ingameUiElements Script off
+    /// </summary>
+    private void TurnAllUiContainersOff()
+    {
+        mainMenuUiElements.obj_loadContainer.SetActive(false);
+        mainMenuUiElements.obj_mainMenuContainer.SetActive(false);
     }
 }

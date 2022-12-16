@@ -12,5 +12,9 @@ public class InGameUiElements : MonoBehaviour
     /// </summary>
     public GameObject pauseMenuContainer;
 
+    public GameObject optionContainer;
+
+    public GameObject ingameContainer;
+
 
 }
