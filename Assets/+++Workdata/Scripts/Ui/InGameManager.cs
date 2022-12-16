@@ -41,7 +41,7 @@ public class InGameManager : MonoBehaviour
     public GameDataManager gameDataManager;
 
 
-    private void OnEnable()
+    private void Start()
     {
         SetCursorState(true);
 
@@ -93,6 +93,7 @@ public class InGameManager : MonoBehaviour
             case 0: // Ingame Menu
                 inGameUiElements.pauseMenuContainer.SetActive(false);
                 SetCursorState(true);
+                playerInformationManager.PlayerMovement(true); // player can move again
                 break;
 
             case 1: // Pause Menu

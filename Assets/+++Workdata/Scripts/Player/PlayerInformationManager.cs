@@ -11,8 +11,12 @@ public class PlayerInformationManager : MonoBehaviour
     /// <summary>
     /// reference to the player Transform component
     /// </summary>
-    [HideInInspector]
-    public Transform player_Transform;
+    public CharacterController characterController;
+
+    /// <summary>
+    /// reference to the playerFollowCamera
+    /// </summary>
+    public GameObject playerFollowCamera;
 
     /// <summary>
     /// reference to the thirdPersonController
@@ -34,9 +38,10 @@ public class PlayerInformationManager : MonoBehaviour
     /// sets the player Components
     /// </summary>
     private void Awake()
-    { 
-        player_Transform = gameObject.transform;
+    {
+        //onent<CharacterController>();
         thirdPersonController = GetComponent<ThirdPersonController>();
+        characterController = GetComponent<CharacterController>();
     }
 
     /// <summary>
@@ -45,7 +50,7 @@ public class PlayerInformationManager : MonoBehaviour
     /// <param name="gameDataManager"> reference to the gameDataManager </param>
     public void SavesAllPlayerInformations(GameDataManager gameDataManager)
     {
-        gameDataManager.currentSaveSlot.playerInformation.playerPos = player_Transform.position;
+        gameDataManager.currentSaveSlot.playerInformation.playerPos = transform.position;
     }
 
     /// <summary>
@@ -55,8 +60,13 @@ public class PlayerInformationManager : MonoBehaviour
     public void LoadsAllPlayerInformations(SaveSlot currentSaveSlot)
     {
         // places the player on the saved position
-        player_Transform.position = currentSaveSlot.playerInformation.playerPos;
+        transform.position = currentSaveSlot.playerInformation.playerPos;
 
+        playerFollowCamera.SetActive(true);
+        characterController.enabled = true;
+        thirdPersonController.enabled = true;
+
+        PlayerMovement(true);
     }
 
     /// <summary>
